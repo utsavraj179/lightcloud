@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plans – LightCloud</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#030c2e;--card:rgba(80,140,255,.12);--line:rgba(150,190,255,.22);--tx:#eaf2ff;--mu:#93aad6;--ac:#5aa2ff;--ac2:#a5d0ff;background:var(--bg);color:var(--tx);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:hidden}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+nav,main,footer{position:relative;z-index:1}
+nav{position:sticky;top:env(safe-area-inset-top,0px);display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;backdrop-filter:blur(12px);background:rgba(5,6,15,.55);border-bottom:1px solid var(--line);z-index:5}
+.logo{font-weight:800;letter-spacing:.12em;color:var(--tx);text-decoration:none}
+.logo span{color:var(--ac)}
+nav a.l{color:var(--mu);text-decoration:none;font-size:14px}
+.btn{display:inline-block;padding:12px 24px;border-radius:999px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#0a0b1e!important;font-weight:700;text-decoration:none}
+main{max-width:1150px;margin:auto;padding:60px 5vw 80px}
+h1{font-size:clamp(34px,6vw,56px);margin:0 0 10px;text-align:center}
+h1 em{font-style:normal;background:linear-gradient(135deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mu);text-align:center;margin:0 0 30px}
+.tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}
+.tab{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--mu);cursor:pointer;font-size:14px;font-family:inherit}
+.tab.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#0a0b1e;border-color:transparent;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;text-align:center;backdrop-filter:blur(10px);transition:transform .25s,border-color .25s}
+@media (hover:hover){.card:hover{transform:translateY(-6px);border-color:var(--ac)}}
+.card.hot{border-color:var(--ac);box-shadow:0 0 40px rgba(139,156,255,.18)}
+.card h3{margin:0}
+.price{font-size:42px;font-weight:800;margin:10px 0 2px}
+.price small{font-size:14px;color:var(--mu);font-weight:500}
+.ram{color:var(--ac);font-weight:700;margin-bottom:14px}
+.card ul{list-style:none;padding:0;margin:0 0 20px;color:var(--mu);font-size:14px;line-height:2}
+h2{text-align:center;margin:70px 0 20px}
+.wrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--card);backdrop-filter:blur(10px)}
+table{width:100%;border-collapse:collapse;min-width:520px;font-size:14px}
+th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
+th{color:var(--ac);font-weight:700}
+td{color:var(--mu)}
+td:first-child{color:var(--tx);font-weight:700}
+tr:last-child td{border-bottom:0}
+.old{color:var(--mu);text-decoration:line-through;font-size:16px;margin-right:6px}.off{display:inline-block;margin-top:2px;padding:3px 10px;border-radius:999px;background:rgba(139,156,255,.15);color:var(--ac);font-size:12px;font-weight:700}
+.vf{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px}.vf span{padding:8px 14px;border:1px solid var(--line);border-radius:999px;color:var(--mu);font-size:14px}
+footer{text-align:center;padding:40px 5vw;color:var(--mu);border-top:1px solid var(--line);font-size:14px}
+
+html{overflow-x:hidden}
+body{background:radial-gradient(900px 600px at 85% -5%,rgba(40,100,230,.35),transparent 60%),#030c2e}
+.orb{position:fixed;border-radius:50%;z-index:0;pointer-events:none;background:linear-gradient(145deg,#3b8cff 0%,#1b49c9 100%)}
+.o1{width:min(70vw,480px);height:min(70vw,480px);top:-14vw;right:-14vw;animation:fl 14s ease-in-out infinite}
+.o2{width:min(30vw,220px);height:min(30vw,220px);bottom:-8vw;left:-8vw;opacity:.9;animation:fl 11s ease-in-out infinite reverse}
+@keyframes fl{50%{transform:translate(-14px,18px)}}
+.brand{position:relative;z-index:1;padding:calc(92px + env(safe-area-inset-top,0px)) 5vw 0;text-align:center;font-weight:800;letter-spacing:.14em}
+.brand span{color:#4f9bff}
+.dock{position:fixed;z-index:20;left:50%;transform:translateX(-50%);top:calc(14px + env(safe-area-inset-top,0px));display:flex;gap:6px;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.28);-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);box-shadow:0 10px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.25)}
+.dock a{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:#7db8ff;text-decoration:none;transition:.2s}
+.dock a svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.dock a:hover{color:#fff}
+.dock a.on{background:linear-gradient(135deg,#3b8cff,#1b49c9);color:#fff;box-shadow:0 4px 16px rgba(59,140,255,.6)}
+.btn{background:linear-gradient(135deg,#3b8cff,#1b49c9);color:#fff!important;box-shadow:0 6px 24px rgba(37,99,235,.45),inset 0 1px 0 rgba(255,255,255,.3)}
+.btn.ghost{background:rgba(255,255,255,.06);box-shadow:none}
+.tab.on{color:#fff}
+.card{background:linear-gradient(160deg,rgba(80,140,255,.16),rgba(255,255,255,.04));border:1px solid rgba(150,190,255,.25)}
+.plan.hot,.card.hot{background:linear-gradient(160deg,rgba(59,140,255,.42),rgba(27,73,201,.25));border-color:#5aa2ff;box-shadow:0 0 50px rgba(59,140,255,.3)}
+.price{color:#fff}.ram{color:#7db8ff}
+.off{background:rgba(59,140,255,.25);color:#bcd9ff}
+</style>
+</head>
+<body>
+<div class="orb o1"></div><div class="orb o2"></div>
+<header class="brand">LIGHT<span>CLOUD</span></header>
+<div class="dock"><a href="index.html" title="Home" aria-label="Home"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></a><a href="plans.html" class="on" title="Plans" aria-label="Plans"><svg viewBox="0 0 24 24"><path d="M6 7h12l1 13H5z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></a><a href="terms.html" title="Terms & Policy" aria-label="Terms & Policy"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg></a><a href="https://lightcloud.fitfillo.qzz.io/" target="_blank" rel="noopener" title="Dashboard" aria-label="Dashboard"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></a><a href="https://discord.gg/fwXGrVaDeS" target="_blank" rel="noopener" title="Discord" aria-label="Discord"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg></a></div>
+<main>
+  <h1>Light Cloud <em>Plans</em></h1>
+  <div class="tabs" id="modes"></div>
+  <p class="sub" id="sub">Ryzen 7 Budget Plans · Power your world</p>
+  <div class="tabs" id="tabs"></div>
+  <div class="grid" id="grid"></div>
+  <div class="card" id="vpsfeat" style="display:none;margin-top:30px;text-align:center"></div>
+  <h2>Compare all plans</h2>
+  <div class="wrap"><table><thead><tr><th>Plan</th><th>RAM</th><th>CPU</th><th>Disk</th><th>Price</th></tr></thead><tbody id="rows"></tbody></table></div>
+</main>
+<footer>AMD Ryzen 7 · NVMe SSD · DDoS Protection · AetherPanel · High Performance</footer>
+
+<script>
+// ---- Edit plans here ----
+const PLANS=[
+ {name:"MINI",price:10,ram:1,cpu:"1 vCPU",disk:10},
+ {name:"STARTER",price:20,ram:2,cpu:"150 CPU",disk:15},
+ {name:"BASIC",price:40,ram:4,cpu:"200 CPU",disk:25},
+ {name:"PLUS",price:70,ram:6,cpu:"250 CPU",disk:40},
+ {name:"PRO",price:130,ram:8,cpu:"300 CPU",disk:50},
+ {name:"ULTRA",price:160,ram:12,cpu:"350 CPU",disk:70},
+ {name:"ADVANCED",price:200,ram:16,cpu:"400 CPU",disk:90},
+ {name:"TITAN",price:250,ram:24,cpu:"450 CPU",disk:120},
+ {name:"EXTREME",price:450,ram:32,cpu:"500 CPU",disk:160},
+ {name:"GOD",price:590,ram:48,cpu:"600 CPU",disk:200},
+ {name:"GOD PLUS",price:699,ram:64,cpu:"800 CPU",disk:250,hot:true}
+];
+const VPS=[
+ {name:"MINI VPS",old:60,price:54,ram:2,cpu:"1 vCPU",disk:15},
+ {name:"STARTER VPS",old:120,price:108,ram:4,cpu:"2 vCPU",disk:25},
+ {name:"POWER VPS",old:240,price:216,ram:8,cpu:"4 vCPU",disk:50},
+ {name:"PRO VPS",old:480,price:432,ram:16,cpu:"6 vCPU",disk:100},
+ {name:"ULTRA VPS",old:960,price:864,ram:32,cpu:"8 vCPU",disk:200},
+ {name:"TITAN VPS",old:1920,price:1728,ram:64,cpu:"12 vCPU",disk:400},
+ {name:"AURA ELITE VPS",old:3840,price:3456,ram:128,cpu:"16 vCPU",disk:800}
+];
+const VPS_FEATS=["Full Root / SSH Access","High-Speed Network","NVMe SSD Storage","DDoS Protection","24/7 Hosting","Resource Monitoring","Ticket Support","VPS Management"];
+const DISCORD="https://discord.gg/fwXGrVaDeS";
+const MODES=["Minecraft Hosting","US VPS"];
+const FILTERS=[["All",()=>true],["Starter (1–4GB)",p=>p.ram<=4],["Mid (6–16GB)",p=>p.ram>=6&&p.ram<=16],["High (24GB+)",p=>p.ram>=24]];
+let mode=0,cur=0;
+const fmt=n=>n.toLocaleString('en-IN');
+function draw(){
+ const vps=mode===1,$=id=>document.getElementById(id);
+ $('modes').innerHTML=MODES.map((m,i)=>`<button class="tab${i===mode?' on':''}" data-m="${i}">${m}</button>`).join('');
+ $('sub').textContent=vps?'US VPS Plans · 10% OFF on all VPS plans':'Ryzen 7 Budget Plans · Power your world';
+ $('tabs').style.display=vps?'none':'flex';
+ $('tabs').innerHTML=FILTERS.map((f,i)=>`<button class="tab${i===cur?' on':''}" data-i="${i}">${f[0]}</button>`).join('');
+ if(vps){
+  $('grid').innerHTML=VPS.map(p=>`<div class="card"><h3>${p.name}</h3><div class="price"><span class="old">₹${fmt(p.old)}</span>₹${fmt(p.price)}<small>/mo</small></div><span class="off">10% OFF</span><div class="ram" style="margin-top:10px">${p.ram}GB DDR4 RAM</div><ul><li>${p.cpu}</li><li>${p.disk}GB NVMe SSD</li><li>US Location</li><li>Full Root / SSH Access</li><li>DDoS Protection</li></ul><a class="btn" href="${DISCORD}" target="_blank" rel="noopener">Order via Ticket</a></div>`).join('');
+  $('vpsfeat').style.display='block';
+  $('vpsfeat').innerHTML=`<h3 style="margin:0">US VPS Location</h3><div class="vf">${VPS_FEATS.map(f=>`<span>${f}</span>`).join('')}</div><p style="color:var(--mu);margin:16px 0 0">Open a ticket on Discord to order.</p>`;
+  $('rows').innerHTML=VPS.map(p=>`<tr><td>${p.name}</td><td>${p.ram}GB</td><td>${p.cpu}</td><td>${p.disk}GB</td><td><s>₹${fmt(p.old)}</s> ₹${fmt(p.price)}/mo</td></tr>`).join('');
+ }else{
+  $('grid').innerHTML=PLANS.filter(FILTERS[cur][1]).map(p=>`<div class="card${p.hot?' hot':''}"><h3>${p.name}</h3><div class="price">₹${p.price}<small>/mo</small></div><div class="ram">${p.ram}GB RAM</div><ul><li>${p.cpu}</li><li>${p.disk}GB NVMe SSD</li><li>AMD Ryzen 7</li><li>DDoS Protection</li><li>AetherPanel</li></ul><a class="btn" href="https://discord.gg/fwXGrVaDeS" target="_blank" rel="noopener">Buy Now</a></div>`).join('');
+  $('vpsfeat').style.display='none';
+  $('rows').innerHTML=PLANS.map(p=>`<tr><td>${p.name}</td><td>${p.ram}GB</td><td>${p.cpu}</td><td>${p.disk}GB</td><td>₹${p.price}/mo</td></tr>`).join('');
+ }
+ document.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{mode=+b.dataset.m;draw()});
+ document.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>{cur=+b.dataset.i;draw()});
+}
+draw();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Terms &amp; Policy – LightCloud</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#030c2e;--card:rgba(80,140,255,.12);--line:rgba(150,190,255,.22);--tx:#eaf2ff;--mu:#93aad6;--ac:#5aa2ff;--ac2:#a5d0ff;scroll-padding-top:80px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:hidden}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+nav,main,footer{position:relative;z-index:1}
+nav{position:sticky;top:env(safe-area-inset-top,0px);display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;backdrop-filter:blur(12px);background:rgba(5,6,15,.6);border-bottom:1px solid var(--line);z-index:5}
+.logo{font-weight:800;letter-spacing:.12em;color:var(--tx);text-decoration:none}
+.logo span{color:var(--ac)}
+nav a.l{color:var(--mu);text-decoration:none;font-size:14px;margin-left:18px}
+nav a.l:hover{color:var(--tx)}
+main{max-width:900px;margin:auto;padding:60px 5vw 80px}
+h1{font-size:clamp(32px,6vw,52px);margin:0 0 8px;text-align:center}
+h1 em{font-style:normal;background:linear-gradient(135deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mu);text-align:center;margin:0 0 28px}
+.toc{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:34px}
+.toc a{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--mu);text-decoration:none;font-size:14px}
+.toc a:hover{border-color:var(--ac);color:var(--tx)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px 28px;margin-bottom:18px;backdrop-filter:blur(10px)}
+.card h2{margin:0 0 12px;font-size:22px}
+.card h2 span{color:var(--ac)}
+.card ol{margin:0;padding-left:20px;color:var(--mu);line-height:1.7;font-size:15px}
+.card li{margin-bottom:6px}
+.card li b{color:var(--tx)}
+.btn{display:inline-block;padding:12px 24px;border-radius:999px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#0a0b1e!important;font-weight:700;text-decoration:none}
+.cta{text-align:center;margin-top:30px}
+footer{text-align:center;padding:36px 5vw;color:var(--mu);border-top:1px solid var(--line);font-size:14px}
+
+html{overflow-x:hidden}
+body{background:radial-gradient(900px 600px at 85% -5%,rgba(40,100,230,.35),transparent 60%),#030c2e}
+.orb{position:fixed;border-radius:50%;z-index:0;pointer-events:none;background:linear-gradient(145deg,#3b8cff 0%,#1b49c9 100%)}
+.o1{width:min(70vw,480px);height:min(70vw,480px);top:-14vw;right:-14vw;animation:fl 14s ease-in-out infinite}
+.o2{width:min(30vw,220px);height:min(30vw,220px);bottom:-8vw;left:-8vw;opacity:.9;animation:fl 11s ease-in-out infinite reverse}
+@keyframes fl{50%{transform:translate(-14px,18px)}}
+.brand{position:relative;z-index:1;padding:calc(92px + env(safe-area-inset-top,0px)) 5vw 0;text-align:center;font-weight:800;letter-spacing:.14em}
+.brand span{color:#4f9bff}
+.dock{position:fixed;z-index:20;left:50%;transform:translateX(-50%);top:calc(14px + env(safe-area-inset-top,0px));display:flex;gap:6px;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.28);-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);box-shadow:0 10px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.25)}
+.dock a{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:#7db8ff;text-decoration:none;transition:.2s}
+.dock a svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.dock a:hover{color:#fff}
+.dock a.on{background:linear-gradient(135deg,#3b8cff,#1b49c9);color:#fff;box-shadow:0 4px 16px rgba(59,140,255,.6)}
+.btn{background:linear-gradient(135deg,#3b8cff,#1b49c9);color:#fff!important;box-shadow:0 6px 24px rgba(37,99,235,.45),inset 0 1px 0 rgba(255,255,255,.3)}
+.btn.ghost{background:rgba(255,255,255,.06);box-shadow:none}
+.tab.on{color:#fff}
+.card{background:linear-gradient(160deg,rgba(80,140,255,.16),rgba(255,255,255,.04));border:1px solid rgba(150,190,255,.25)}
+.plan.hot,.card.hot{background:linear-gradient(160deg,rgba(59,140,255,.42),rgba(27,73,201,.25));border-color:#5aa2ff;box-shadow:0 0 50px rgba(59,140,255,.3)}
+.price{color:#fff}.ram{color:#7db8ff}
+.off{background:rgba(59,140,255,.25);color:#bcd9ff}
+</style>
+</head>
+<body>
+<div class="orb o1"></div><div class="orb o2"></div>
+<header class="brand">LIGHT<span>CLOUD</span></header>
+<div class="dock"><a href="index.html" title="Home" aria-label="Home"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></a><a href="plans.html" title="Plans" aria-label="Plans"><svg viewBox="0 0 24 24"><path d="M6 7h12l1 13H5z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></a><a href="terms.html" class="on" title="Terms & Policy" aria-label="Terms & Policy"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg></a><a href="https://lightcloud.fitfillo.qzz.io/" target="_blank" rel="noopener" title="Dashboard" aria-label="Dashboard"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></a><a href="https://discord.gg/fwXGrVaDeS" target="_blank" rel="noopener" title="Discord" aria-label="Discord"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg></a></div>
+<main>
+  <h1>Terms &amp; <em>Policy</em></h1>
+  <p class="sub">By purchasing or using LightCloud services, you agree to the rules below.</p>
+  <div class="toc" id="toc"></div>
+  <div id="docs"></div>
+  <div class="cta"><a class="btn" href="https://discord.gg/fwXGrVaDeS" target="_blank" rel="noopener">Questions? Join our Discord</a></div>
+</main>
+<footer>© LightCloud · Last updated October 2026</footer>
+
+<script>
+// ---- Edit policy text here ----
+const SECTIONS=[
+ ["Terms of Service",[
+  "<b>Acceptance.</b> Using our services means you accept these terms. If you disagree, please do not purchase or use them.",
+  "<b>Accounts.</b> You are responsible for your account, panel login and everything done under it. Keep your credentials private.",
+  "<b>Services.</b> Plans include the resources shown on the Plans page (RAM, CPU, NVMe disk). Resources may not be shared, resold or exceeded.",
+  "<b>Changes.</b> We may update plans, prices and these terms. Important changes will be announced on our Discord server.",
+  "<b>Termination.</b> We may suspend or terminate services that break these terms, with or without notice."
+ ]],
+ ["Acceptable Use",[
+  "<b>No illegal content.</b> Do not host pirated, illegal or harmful content or use servers for unlawful activity.",
+  "<b>No attacks.</b> DDoS, port scanning, botnets, malware, phishing and any attack on other networks are forbidden.",
+  "<b>No mining or abuse.</b> Crypto mining, proxy/VPN hosting and any non-Minecraft heavy workloads are not allowed.",
+  "<b>Fair use.</b> Keep resource usage reasonable. Servers that harm node stability may be limited or suspended.",
+  "<b>Staff decisions.</b> Violations can lead to a warning, suspension or permanent ban without refund."
+ ]],
+ ["Payments &amp; Refunds",[
+  "<b>Billing.</b> Plans are billed monthly in INR at the price shown on the Plans page.",
+  "<b>Payment methods.</b> Accepted methods are listed on our Payment Methods page or shared in our Discord ticket system.",
+  "<b>Renewals.</b> Pay before the due date to keep your server active. Unpaid servers may be suspended, then deleted.",
+  "<b>Refunds.</b> Because plans are low-cost digital services, payments are generally non-refundable. Refund requests for service problems we cannot fix may be reviewed through a ticket.",
+  "<b>Chargebacks.</b> Chargebacks or payment disputes in bad faith lead to a permanent ban."
+ ]],
+ ["Privacy Policy",[
+  "<b>What we collect.</b> Basic details such as your Discord username, email (if provided), payment reference and server usage data.",
+  "<b>How we use it.</b> To provide and secure the service, handle payments and give support. We do not sell your data.",
+  "<b>Sharing.</b> Data is shared only with payment or infrastructure providers when needed, or when required by law.",
+  "<b>Your data.</b> Back up your world and files regularly. You can request deletion of your account data via a ticket."
+ ]],
+ ["Uptime &amp; Support",[
+  "<b>Uptime.</b> We aim for high availability, but 100% uptime is not guaranteed. Maintenance may cause short downtime.",
+  "<b>Backups.</b> You are responsible for your own backups. We are not liable for lost worlds or files.",
+  "<b>Support.</b> Support is provided through our Discord server by opening a ticket. Please be respectful to staff.",
+  "<b>DDoS protection.</b> Protection is included, but extreme attacks may lead to temporary null-routing."
+ ]]
+];
+document.getElementById('toc').innerHTML=SECTIONS.map((s,i)=>`<a href="#s${i}">${s[0]}</a>`).join('');
+document.getElementById('docs').innerHTML=SECTIONS.map((s,i)=>`<div class="card" id="s${i}"><h2><span>${i+1}.</span> ${s[0]}</h2><ol>${s[1].map(x=>`<li>${x}</li>`).join('')}</ol></div>`).join('');
+
+</script>
+</body>
+</html>
