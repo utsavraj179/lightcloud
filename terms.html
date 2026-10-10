@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Terms &amp; Policy – LightCloud</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#05060f;--card:rgba(20,22,48,.6);--line:rgba(160,170,255,.18);--tx:#eef0ff;--mu:#a9aed3;--ac:#8b9cff;--ac2:#c9b8ff}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:hidden}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+nav,main,footer{position:relative;z-index:1}
+nav{position:sticky;top:env(safe-area-inset-top,0px);display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;backdrop-filter:blur(12px);background:rgba(5,6,15,.6);border-bottom:1px solid var(--line);z-index:5}
+.logo{font-weight:800;letter-spacing:.12em;color:var(--tx);text-decoration:none}
+.logo span{color:var(--ac)}
+nav a.l{color:var(--mu);text-decoration:none;font-size:14px;margin-left:18px}
+nav a.l:hover{color:var(--tx)}
+main{max-width:900px;margin:auto;padding:60px 5vw 80px}
+h1{font-size:clamp(32px,6vw,52px);margin:0 0 8px;text-align:center}
+h1 em{font-style:normal;background:linear-gradient(135deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mu);text-align:center;margin:0 0 28px}
+.toc{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:34px}
+.toc a{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--mu);text-decoration:none;font-size:14px}
+.toc a:hover{border-color:var(--ac);color:var(--tx)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px 28px;margin-bottom:18px;backdrop-filter:blur(10px)}
+.card h2{margin:0 0 12px;font-size:22px}
+.card h2 span{color:var(--ac)}
+.card ol{margin:0;padding-left:20px;color:var(--mu);line-height:1.7;font-size:15px}
+.card li{margin-bottom:6px}
+.card li b{color:var(--tx)}
+.btn{display:inline-block;padding:12px 24px;border-radius:999px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#0a0b1e!important;font-weight:700;text-decoration:none}
+.cta{text-align:center;margin-top:30px}
+footer{text-align:center;padding:36px 5vw;color:var(--mu);border-top:1px solid var(--line);font-size:14px}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<nav>
+  <a class="logo" href="index.html">LIGHT<span>CLOUD</span></a>
+  <div><a class="l" href="index.html">Home</a><a class="l" href="plans.html">Plans</a></div>
+</nav>
+<main>
+  <h1>Terms &amp; <em>Policy</em></h1>
+  <p class="sub">By purchasing or using LightCloud services, you agree to the rules below.</p>
+  <div class="toc" id="toc"></div>
+  <div id="docs"></div>
+  <div class="cta"><a class="btn" href="https://discord.gg/fwXGrVaDeS" target="_blank" rel="noopener">Questions? Join our Discord</a></div>
+</main>
+<footer>© LightCloud · Last updated October 2026</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// ---- Edit policy text here ----
+const SECTIONS=[
+ ["Terms of Service",[
+  "<b>Acceptance.</b> Using our services means you accept these terms. If you disagree, please do not purchase or use them.",
+  "<b>Accounts.</b> You are responsible for your account, panel login and everything done under it. Keep your credentials private.",
+  "<b>Services.</b> Plans include the resources shown on the Plans page (RAM, CPU, NVMe disk). Resources may not be shared, resold or exceeded.",
+  "<b>Changes.</b> We may update plans, prices and these terms. Important changes will be announced on our Discord server.",
+  "<b>Termination.</b> We may suspend or terminate services that break these terms, with or without notice."
+ ]],
+ ["Acceptable Use",[
+  "<b>No illegal content.</b> Do not host pirated, illegal or harmful content or use servers for unlawful activity.",
+  "<b>No attacks.</b> DDoS, port scanning, botnets, malware, phishing and any attack on other networks are forbidden.",
+  "<b>No mining or abuse.</b> Crypto mining, proxy/VPN hosting and any non-Minecraft heavy workloads are not allowed.",
+  "<b>Fair use.</b> Keep resource usage reasonable. Servers that harm node stability may be limited or suspended.",
+  "<b>Staff decisions.</b> Violations can lead to a warning, suspension or permanent ban without refund."
+ ]],
+ ["Payments &amp; Refunds",[
+  "<b>Billing.</b> Plans are billed monthly in INR at the price shown on the Plans page.",
+  "<b>Payment methods.</b> Accepted methods are listed on our Payment Methods page or shared in our Discord ticket system.",
+  "<b>Renewals.</b> Pay before the due date to keep your server active. Unpaid servers may be suspended, then deleted.",
+  "<b>Refunds.</b> Because plans are low-cost digital services, payments are generally non-refundable. Refund requests for service problems we cannot fix may be reviewed through a ticket.",
+  "<b>Chargebacks.</b> Chargebacks or payment disputes in bad faith lead to a permanent ban."
+ ]],
+ ["Privacy Policy",[
+  "<b>What we collect.</b> Basic details such as your Discord username, email (if provided), payment reference and server usage data.",
+  "<b>How we use it.</b> To provide and secure the service, handle payments and give support. We do not sell your data.",
+  "<b>Sharing.</b> Data is shared only with payment or infrastructure providers when needed, or when required by law.",
+  "<b>Your data.</b> Back up your world and files regularly. You can request deletion of your account data via a ticket."
+ ]],
+ ["Uptime &amp; Support",[
+  "<b>Uptime.</b> We aim for high availability, but 100% uptime is not guaranteed. Maintenance may cause short downtime.",
+  "<b>Backups.</b> You are responsible for your own backups. We are not liable for lost worlds or files.",
+  "<b>Support.</b> Support is provided through our Discord server by opening a ticket. Please be respectful to staff.",
+  "<b>DDoS protection.</b> Protection is included, but extreme attacks may lead to temporary null-routing."
+ ]]
+];
+document.getElementById('toc').innerHTML=SECTIONS.map((s,i)=>`<a href="#s${i}">${s[0]}</a>`).join('');
+document.getElementById('docs').innerHTML=SECTIONS.map((s,i)=>`<div class="card" id="s${i}"><h2><span>${i+1}.</span> ${s[0]}</h2><ol>${s[1].map(x=>`<li>${x}</li>`).join('')}</ol></div>`).join('');
+
+// ---- 3D background ----
+const renderer=new THREE.WebGLRenderer({canvas:document.getElementById('bg'),antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(55,1,.1,200);cam.position.z=9;
+const c=document.createElement('canvas');c.width=1024;c.height=512;const x=c.getContext('2d');
+x.fillStyle='#b8b8c4';x.fillRect(0,0,1024,512);
+for(let i=0;i<120;i++){const px=Math.random()*1024,py=Math.random()*512,r=4+Math.random()*26,g=x.createRadialGradient(px,py,r*.2,px,py,r);
+ g.addColorStop(0,'rgba(70,70,86,.55)');g.addColorStop(1,'rgba(235,235,245,.25)');x.fillStyle=g;x.beginPath();x.arc(px,py,r,0,7);x.fill()}
+const tex=new THREE.CanvasTexture(c);
+const moon=new THREE.Mesh(new THREE.SphereGeometry(2,48,48),new THREE.MeshStandardMaterial({map:tex,bumpMap:tex,bumpScale:.06,roughness:1}));
+moon.position.set(-6,3.5,-5);scene.add(moon);
+scene.add(new THREE.AmbientLight(0x2a3060,.9));
+const sun=new THREE.DirectionalLight(0xfff4e0,1.5);sun.position.set(5,3,6);scene.add(sun);
+function stars(n,s,sp,col){const g=new THREE.BufferGeometry(),a=new Float32Array(n*3);for(let i=0;i<n*3;i++)a[i]=(Math.random()-.5)*sp;
+ g.setAttribute('position',new THREE.BufferAttribute(a,3));return new THREE.Points(g,new THREE.PointsMaterial({color:col,size:s,transparent:true,opacity:.9}))}
+const s1=stars(1600,.07,120,0xffffff),s2=stars(450,.14,90,0xa9b6ff);scene.add(s1,s2);
+let mx=0,my=0,sy=0;
+addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+addEventListener('scroll',()=>{sy=scrollY});
+function size(){renderer.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();moon.position.x=innerWidth<700?-3:-6}
+addEventListener('resize',size);size();
+const clk=new THREE.Clock();
+(function loop(){const t=clk.getElapsedTime();
+ moon.rotation.y=t*.06;s1.rotation.y=t*.004;s2.rotation.y=-t*.006;
+ cam.position.x+=(mx*1.2-cam.position.x)*.04;cam.position.y+=(-my*.8-sy*.0012-cam.position.y)*.04;cam.lookAt(0,-sy*.0006,0);
+ renderer.render(scene,cam);requestAnimationFrame(loop)})();
+</script>
+</body>
+</html>
